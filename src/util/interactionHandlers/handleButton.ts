@@ -9,7 +9,6 @@ export async function handleButton(
   client: Client,
   interaction: ButtonInteraction
 ) {
-  console.log(interaction.customId);
   const [id, ...data] = interaction.customId.split("~");
   switch (id) {
     case "acceptSuggestion":
