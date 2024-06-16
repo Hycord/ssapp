@@ -1,0 +1,36 @@
+{
+  "name": "example-github-actions-typescript-docker",
+  "version": "1.0.0",
+  "description": "Example of a GitHub Actions workflow to build a TypeScript project and create a Docker image.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node dist/index.js",
+    "docker": "npm run init && node dist/index.js",
+    "dev": "nodemon ./src/index.ts",
+    "init": "npx prisma db push --schema=/usr/app/prisma/schema.prisma --accept-data-loss",
+    "db": "npx prisma db push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hycord/egatd.git"
+  },
+  "author": "hycord <hycord@hycordia.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hycord/egatd/issues"
+  },
+  "homepage": "https://github.com/hycord/egatd#readme",
+  "dependencies": {
+    "@prisma/client": "^5.15.0",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "prisma": "^5.15.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
